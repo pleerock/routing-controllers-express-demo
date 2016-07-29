@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import {createExpressServer, useContainer, useExpressServer} from "routing-controllers";
+import {useContainer, createKoaServer} from "routing-controllers";
 import {Container} from "typedi";
 
 // setup routing-controllers to use typedi container. You can use any container here
@@ -9,12 +9,12 @@ useContainer(Container);
 import "./controllers/CategoryController";
 import "./controllers/PostController";
 
-// create express server
-const expressApp = createExpressServer({ // alternatively you can use useExpressServer with your own preconfigured express server
+// create koa server
+const koaApp = createKoaServer({ // alternatively you can use useKoaServer with your own preconfigured koa server
     // you also can do: controllerDirs: [__dirname + "/controllers"]
 });
 
-// run express app
-expressApp.listen(3000);
+// run koa app
+koaApp.listen(3000);
 
 console.log("Server is up and running at port 3000");
