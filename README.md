@@ -1,4 +1,4 @@
-# routing-controllers with koa demo
+# routing-controllers with express demo
 
 1. Install all dependencies:
 
