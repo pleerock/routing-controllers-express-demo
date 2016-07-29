@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pleerock/routing-controllers.git"
+    "url": "https://github.com/pleerock/routing-controllers-express-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/pleerock/routing-controllers/issues"
+    "url": "https://github.com/pleerock/routing-controllers-express-demo/issues"
   },
   "tags": [
     "express",
