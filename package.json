@@ -1,5 +1,5 @@
 {
-  "name": "routing-controllers-demo",
+  "name": "routing-controllers-express-demo",
   "private": true,
   "version": "0.0.1",
   "description": "Example of express + typescript project using routing-controllers",
