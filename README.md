@@ -12,7 +12,9 @@
 
     `node ./build/app.js`
     
-3. Open in browser `http://localhost:3000/posts`
+3. Open in browser:
+ 
+    `http://localhost:3000/posts`
 
 ### Using with older versions of node
 
