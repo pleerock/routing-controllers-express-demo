@@ -1,3 +1,5 @@
+> This repository is deprecated. Microframework architecure has changed. Please consider writing your own module for a newer versions of microframework.
+
 # routing-controllers with express demo
 
 1. Install all dependencies:
