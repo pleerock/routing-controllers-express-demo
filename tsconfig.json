@@ -1,18 +1,23 @@
 {
-    "version": "1.8.0",
+    "compileOnSave": true,
     "compilerOptions": {
-        "outDir": "build",
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es6",
         "noImplicitAny": true,
-        "declaration": true
+        "sourceMap": true,
+        "outDir": "build",
+        "moduleResolution": "node",
+        "typeRoots": [
+            "node_modules/@types"
+        ]
     },
+    "include": [
+        "src/**/*.ts"
+    ],
     "exclude": [
-        "build",
-        "node_modules"
+        "node_modules",
+        "build"
     ]
 }
