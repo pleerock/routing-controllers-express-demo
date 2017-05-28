@@ -1,32 +1,33 @@
-import {JsonController, Get, Post as HttpPost, Param, Delete, Body} from "routing-controllers";
+import {JsonController, Get, Post, Param, Delete, Body} from "routing-controllers";
 import {Service} from "typedi";
 import {PostRepository} from "../repository/PostRepository";
-import {Post} from "../model/Post";
+import {Post as PostModel} from "../model/Post";
 
 @Service()
-@JsonController()
+@JsonController('/posts')
 export class PostController {
 
-    constructor(private postRepository: PostRepository) {
-    }
+    constructor(
+        private postRepository: PostRepository
+    ) { }
 
-    @Get("/posts")
-    all(): Promise<Post[]> {
+    @Get("/")
+    all(): Promise<PostModel[]> {
         return this.postRepository.findAll();
     }
 
-    @Get("/posts/:id")
-    one(@Param("id") id: number): Post {
+    @Get("/:id")
+    one(@Param("id") id: number): PostModel {
         return this.postRepository.findOne(id);
     }
 
-    @HttpPost("/posts")
-    post(@Body() post: Post): Post {
+    @Post("")
+    post(@Body() post: Post): PostModel {
         return this.postRepository.save(post);
     }
 
-    @Delete("/posts/:id")
-    delete(@Param("id") id: number): Post {
+    @Delete("/:id")
+    delete(@Param("id") id: number): PostModel {
         return this.postRepository.remove(id);
     }
 
