@@ -1,14 +1,14 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "outDir": "build",
     "module": "commonjs",
     "target": "es6",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "noImplicitAny": true,
-    "sourceMap": true,
-    "outDir": "build",
-    "moduleResolution": "node"
+    "sourceMap": true
   },
   "exclude": [
     "node_modules",
