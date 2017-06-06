@@ -1,7 +1,8 @@
 import "reflect-metadata";
-
 import {createExpressServer, useContainer, useExpressServer} from "routing-controllers";
 import {Container} from "typedi";
+import {CategoryController} from "./controllers/CategoryController";
+import {PostController} from "./controllers/PostController";
 
 /**
  * Setup routing-controllers to use typedi container.
@@ -9,23 +10,18 @@ import {Container} from "typedi";
 useContainer(Container);
 
 /**
- * We have to import all controllers, before creating the server.
- * Alternatively we can specify a "controllers" option in
- * createExpressServer/useExpressServer to load controllers from an array of paths.
- */
-import "./controllers/CategoryController";
-import "./controllers/PostController";
-
-/**
  * We create a new express server instance.
- * We could have also use useExpressServer here to attach controllers to an
- * existing express instance.
+ * We could have also use useExpressServer here to attach controllers to an existing express instance.
  */
 const expressApp = createExpressServer({
     /**
-     * We can add options about how routing-controllers should
-     * configure itself.
+     * We can add options about how routing-controllers should configure itself.
+     * Here we specify what controllers should be registered in our express server.
      */
+    controllers: [
+        CategoryController,
+        PostController
+    ]
 });
 
 /**

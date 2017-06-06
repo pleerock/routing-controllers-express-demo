@@ -1,23 +1,17 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "outDir": "build",
-        "moduleResolution": "node",
-        "typeRoots": [
-            "node_modules/@types"
-        ]
-    },
-    "include": [
-        "src/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "build"
-    ]
+  "compileOnSave": true,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "outDir": "build",
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
 }

@@ -4,29 +4,28 @@ import {CategoryRepository} from "../repository/CategoryRepository";
 import {Category} from "../model/Category";
 
 @Service()
-@JsonController('/categories')
+@JsonController()
 export class CategoryController {
 
-    constructor(
-        private categoryRepository: CategoryRepository
-    ) { }
+    constructor(private categoryRepository: CategoryRepository) {
+    }
 
-    @Get("/")
+    @Get("/categories")
     all(): Promise<Category[]> {
         return this.categoryRepository.findAll();
     }
 
-    @Get("/:id")
+    @Get("/categories/:id")
     one(@Param("id") id: number): Category {
         return this.categoryRepository.findOne(id);
     }
 
-    @Post("")
+    @Post("/categories")
     category(@Body() category: Category): Category {
         return this.categoryRepository.save(category);
     }
 
-    @Delete("/:id")
+    @Delete("/categories/:id")
     delete(@Param("id") id: number): Category {
         return this.categoryRepository.remove(id);
     }
